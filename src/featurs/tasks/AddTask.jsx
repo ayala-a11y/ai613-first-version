@@ -38,7 +38,7 @@ const AddTask = () => {
         };
         dispatch(addTask(newTask));//אחרת מזין את הפרטים שהכנסנו למטה ומוסיף את הקובץ
          alert('your task added successfully');
-        navigate('/update'); // חוזרים לרשימת המשימות אחרי הוספה
+        navigate('/'); // חוזרים לרשימת המשימות אחרי הוספה
     };
 
     return <>

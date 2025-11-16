@@ -1,9 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { updateTask } from './tasksSlice';
 
 const TasksList = () => {
     const list = useSelector(state => state.tasks.todos);
-    
+    const navigate = useNavigate();
+
     return <>
 
         <div>
@@ -15,8 +18,10 @@ const TasksList = () => {
                     <p>{task.date}</p>
                     {task.img && <img src={task.img} style={{ maxWidth: "100px" }} />}
                     <p>{task.isCompleted ? "Completed" : "Not completed"}</p>
+                    <button onClick={() => navigate(`/update/${task.id}`)}>Edit Task</button>
                 </div>
             ))}
+
         </div>
     </>
 };

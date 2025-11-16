@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 
 const TasksList = () => {
     const list = useSelector(state => state.tasks.todos);
-
+    
     return <>
+
         <div>
             <h2>Tasks List</h2>
             {list.map((task) => (

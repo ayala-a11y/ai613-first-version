@@ -35,7 +35,7 @@ export const tasksSlice = createSlice({
             }
 
             state.todos[index] = { ...updatedTask };
-        },
+        }
 
     }
 });
